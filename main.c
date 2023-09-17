@@ -59,6 +59,15 @@ int main() {
 					}
 				break; 
             case 4:
+            	printf("donner voter id :\n");
+            	scanf("%s",id);
+            	if(rechercher(id) == -1){
+            		printf(" voter id n exisit pas \n");
+            
+				}else{
+            	   supper(rechercher(id));
+					}
+				break; 
                     
             
             default:
@@ -104,6 +113,13 @@ int rechercher(char id[5]){
 		}
 	}
 	return pos;
+}
+
+void supper(int pos){
+	for(i=pos ;i<t.count;i++){
+		t.pr[i] = t.pr[i+1];
+	}
+	t.count--;
 }
 
 
